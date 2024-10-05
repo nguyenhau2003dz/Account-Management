@@ -1,0 +1,6 @@
+framework module Pods_Objective_C_TableView_Api_Json {
+  umbrella header "Pods-Objective_C_TableView_Api_Json-umbrella.h"
+
+  export *
+  module * { export * }
+}
