@@ -7,6 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import "AccountModel.h"
+#import "ZoomableView.h"
 
 typedef void (^CompletionHandler)(NSArray<AccountModel *> *accounts, NSError *error);
 
@@ -19,6 +20,9 @@ typedef void (^PostCompletionHandler)(NSError *error);
 @property (nonatomic, strong) NSMutableArray<AccountModel *> *accountArray;
 
 - (IBAction)buttonPost:(id)sender;
+
+//Custom View
+@property (weak, nonatomic) IBOutlet ZoomableView *zoomableView;
 
 
 @end

@@ -9,7 +9,7 @@
 #import "AccountCell.h"
 #import "AccountModel.h"
 #import "AFNetworking.h"
-
+#import "WKWebViewController.h"
 @interface ViewController ()
 
 @end
@@ -18,6 +18,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+//    UIImage *img = [UIImage imageNamed:@"logoo"];
+//    self.zoomableView.imageView.image = img;
+//    
+//    if (img) {
+//        NSLog(@"True");
+//    } else {
+//        NSLog(@"False");
+//
+//    }
+    [self.view addSubview:self.zoomableView];
     
     self.tableViewAccount.delegate = self;
     self.tableViewAccount.dataSource = self;
@@ -208,6 +219,18 @@
     [downloadTask resume];
     return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Khởi tạo ViewController2 từ storyboard
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    WKWebViewController *vc2 = [storyboard instantiateViewControllerWithIdentifier:@"displayWebView"];
+    
+    // Đẩy ViewController2 vào NavigationController
+    [self.navigationController pushViewController:vc2 animated:YES];
+    
+    // Bỏ chọn dòng sau khi nhấn
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 //MARK: Even delete
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -231,7 +254,7 @@
 //MARK: Block add, update, delete, get
 //Block post data lên api
 - (void)postDataToAPIWithUsername:(NSString *)username password:(NSString *)password imageLink:(NSString *)imageLink completion:(PostCompletionHandler)completion {
-    NSURL *URL = [NSURL URLWithString:@"https://c29c-2001-ee0-4101-15f4-adc2-e713-6b5c-ff5e.ngrok-free.app/api/post"];
+    NSURL *URL = [NSURL URLWithString:@"https://6de8-2402-800-bb2a-7056-cd1f-8154-1984-dea4.ngrok-free.app/api/post"];
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
@@ -260,7 +283,7 @@
 
 // Block update
 - (void)updateAccountWithID:(NSString *)accountID username:(NSString *)username password:(NSString *)password imageLink:(NSString *)imageLink completion:(PostCompletionHandler)completion {
-    NSString *urlString = [NSString stringWithFormat:@"https://c29c-2001-ee0-4101-15f4-adc2-e713-6b5c-ff5e.ngrok-free.app/api/edit/%@", accountID];
+    NSString *urlString = [NSString stringWithFormat:@"https://6de8-2402-800-bb2a-7056-cd1f-8154-1984-dea4.ngrok-free.app/api/edit/%@", accountID];
     NSURL *URL = [NSURL URLWithString:urlString];
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -289,7 +312,7 @@
 
 // Block xoá tài khoản
 - (void)deleteAccountWithID:(NSString *)accountID completion:(PostCompletionHandler)completion {
-    NSString *urlString = [NSString stringWithFormat:@"https://c29c-2001-ee0-4101-15f4-adc2-e713-6b5c-ff5e.ngrok-free.app/api/delete/%@", accountID];
+    NSString *urlString = [NSString stringWithFormat:@"https://6de8-2402-800-bb2a-7056-cd1f-8154-1984-dea4.ngrok-free.app/api/delete/%@", accountID];
     NSURL *URL = [NSURL URLWithString:urlString];
     NSLog(@"Lỗi khi xóa tài khoản: %@", urlString);
     
@@ -309,7 +332,7 @@
 
 //Block get data từ api
 - (void)getDataFromAPIWithCompletion:(CompletionHandler)completion {
-    NSURL *URL = [NSURL URLWithString:@"https://c29c-2001-ee0-4101-15f4-adc2-e713-6b5c-ff5e.ngrok-free.app/api/getList"];
+    NSURL *URL = [NSURL URLWithString:@"https://6de8-2402-800-bb2a-7056-cd1f-8154-1984-dea4.ngrok-free.app/api/getList"];
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     

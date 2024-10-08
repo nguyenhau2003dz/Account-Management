@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		587CCCE21B67518FB7672333 /* Pods_Objective_C_TableView_Api_Json.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E262566730873DCBC7154F64 /* Pods_Objective_C_TableView_Api_Json.framework */; };
+		D578CBB42CB4E5F8003148C4 /* WKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D578CBB32CB4E5F8003148C4 /* WKWebViewController.m */; };
+		D578CBB82CB4F067003148C4 /* ZoomableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D578CBB72CB4F067003148C4 /* ZoomableView.m */; };
+		D578CBC22CB5124A003148C4 /* ZoomableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D578CBC12CB5124A003148C4 /* ZoomableView.xib */; };
 		D57C97ED2CAE5B41003D3A9C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D57C97EC2CAE5B41003D3A9C /* AppDelegate.m */; };
 		D57C97F02CAE5B41003D3A9C /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D57C97EF2CAE5B41003D3A9C /* SceneDelegate.m */; };
 		D57C97F32CAE5B41003D3A9C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D57C97F22CAE5B41003D3A9C /* ViewController.m */; };
@@ -22,6 +25,11 @@
 
 /* Begin PBXFileReference section */
 		BE1570B1B8058E1A942AE7C6 /* Pods-Objective_C_TableView_Api_Json.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Objective_C_TableView_Api_Json.release.xcconfig"; path = "Target Support Files/Pods-Objective_C_TableView_Api_Json/Pods-Objective_C_TableView_Api_Json.release.xcconfig"; sourceTree = "<group>"; };
+		D578CBB22CB4E5F8003148C4 /* WKWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKWebViewController.h; sourceTree = "<group>"; };
+		D578CBB32CB4E5F8003148C4 /* WKWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKWebViewController.m; sourceTree = "<group>"; };
+		D578CBB62CB4F067003148C4 /* ZoomableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZoomableView.h; sourceTree = "<group>"; };
+		D578CBB72CB4F067003148C4 /* ZoomableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZoomableView.m; sourceTree = "<group>"; };
+		D578CBC12CB5124A003148C4 /* ZoomableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZoomableView.xib; sourceTree = "<group>"; };
 		D57C97E82CAE5B41003D3A9C /* Objective_C_TableView_Api_Json.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Objective_C_TableView_Api_Json.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D57C97EB2CAE5B41003D3A9C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D57C97EC2CAE5B41003D3A9C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -72,6 +80,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D578CBB52CB4EC22003148C4 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				D578CBB62CB4F067003148C4 /* ZoomableView.h */,
+				D578CBB72CB4F067003148C4 /* ZoomableView.m */,
+				D578CBC12CB5124A003148C4 /* ZoomableView.xib */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
 		D57C97DF2CAE5B41003D3A9C = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +111,7 @@
 		D57C97EA2CAE5B41003D3A9C /* Objective_C_TableView_Api_Json */ = {
 			isa = PBXGroup;
 			children = (
+				D578CBB52CB4EC22003148C4 /* CustomView */,
 				D57C98072CAE5D40003D3A9C /* Other */,
 				D57C98062CAE5D10003D3A9C /* Controller */,
 				D57C98052CAE5D0B003D3A9C /* View */,
@@ -128,6 +147,8 @@
 			children = (
 				D57C97F12CAE5B41003D3A9C /* ViewController.h */,
 				D57C97F22CAE5B41003D3A9C /* ViewController.m */,
+				D578CBB22CB4E5F8003148C4 /* WKWebViewController.h */,
+				D578CBB32CB4E5F8003148C4 /* WKWebViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -205,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D57C97F82CAE5B42003D3A9C /* Assets.xcassets in Resources */,
+				D578CBC22CB5124A003148C4 /* ZoomableView.xib in Resources */,
 				D5A9EC5B2CAE835F00D700F3 /* AccountCell.xib in Resources */,
 				D57C97FB2CAE5B42003D3A9C /* Base in Resources */,
 				D57C97F62CAE5B41003D3A9C /* Base in Resources */,
@@ -263,7 +285,9 @@
 				D57C97F32CAE5B41003D3A9C /* ViewController.m in Sources */,
 				D57C97ED2CAE5B41003D3A9C /* AppDelegate.m in Sources */,
 				D57C980B2CAE71E8003D3A9C /* AccountModel.m in Sources */,
+				D578CBB42CB4E5F8003148C4 /* WKWebViewController.m in Sources */,
 				D57C97FE2CAE5B42003D3A9C /* main.m in Sources */,
+				D578CBB82CB4F067003148C4 /* ZoomableView.m in Sources */,
 				D57C97F02CAE5B41003D3A9C /* SceneDelegate.m in Sources */,
 				D5A9EC5E2CAE83CF00D700F3 /* AccountCell.m in Sources */,
 			);
