@@ -14,17 +14,40 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
+  - FBAEMKit (17.3.0):
+    - FBSDKCoreKit_Basics (= 17.3.0)
+  - FBSDKCoreKit (17.3.0):
+    - FBAEMKit (= 17.3.0)
+    - FBSDKCoreKit_Basics (= 17.3.0)
+  - FBSDKCoreKit_Basics (17.3.0)
+  - FBSDKLoginKit (17.3.0):
+    - FBSDKCoreKit (= 17.3.0)
+  - FBSDKShareKit (17.3.0):
+    - FBSDKCoreKit (= 17.3.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 4.0)
+  - FBSDKCoreKit
+  - FBSDKLoginKit
+  - FBSDKShareKit
 
 SPEC REPOS:
   trunk:
     - AFNetworking
+    - FBAEMKit
+    - FBSDKCoreKit
+    - FBSDKCoreKit_Basics
+    - FBSDKLoginKit
+    - FBSDKShareKit
 
 SPEC CHECKSUMS:
   AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
+  FBAEMKit: 92f488a9c97208e2f6f01655750944d213fbc0b0
+  FBSDKCoreKit: 1be47a742ccdddf8dd85272c3953534214dc0f30
+  FBSDKCoreKit_Basics: fcafe75f7deeed1146d04ea51b45a69731e63c16
+  FBSDKLoginKit: ad0d6485feace32d65f407f6a288c4dfa8ec559c
+  FBSDKShareKit: e96f20fc2f6f68d25ae310a0f64f147f25ef66a4
 
-PODFILE CHECKSUM: ab0b391be95cac5eb7e55396db6829bad19875d2
+PODFILE CHECKSUM: 699fd5bff824f5b609e336bc48adaffe13159945
 
 COCOAPODS: 1.15.2
