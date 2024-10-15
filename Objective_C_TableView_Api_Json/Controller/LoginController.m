@@ -9,6 +9,13 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import "ViewController.h"
+#import <GoogleSignIn/GoogleSignIn.h>
+#import <AirBridge/AirBridge.h>
+
+#import <AirBridge/ABUser.h>
+#import <AirBridge/ABInAppEvent.h>
+#import <AirBridge/ABCategory.h>
+
 @interface LoginController ()
 @property (nonatomic, strong) FBSDKLoginManager *fbloginmanager;
 @end
@@ -19,25 +26,65 @@
     [super viewDidLoad];
     self.fbloginmanager = [[FBSDKLoginManager alloc] init];
 }
-- (IBAction)btnLogin:(id)sender {
-    [self login];
+- (IBAction)btnLogin2:(id)sender {
+    
+    [GIDSignIn.sharedInstance
+          signInWithPresentingViewController:self
+                                  completion:^(GIDSignInResult * _Nullable signInResult,
+                                               NSError * _Nullable error) {
+        if (error) {
+          return;
+        }
+        
+        if (signInResult) {
+            NSLog(@"Đăng Nhập Thành Công Google");
+            NSLog(@"User ID: %@", signInResult.user.userID);
+            NSLog(@"User Name: %@", signInResult.user.profile.name);
+            NSLog(@"User Email: %@", signInResult.user.profile.email);
+            
+            //Bắn even signIn in Airbridge
+            ABUser* user = [[ABUser alloc] init];
+            user.ID = signInResult.user.userID;
+            user.email = signInResult.user.profile.email;
+            user.alias = @{
+                @"name": @"hau",
+            };
+            user.attributes = @{
+                @"address": @"HCM",
+            };
+            [AirBridge.state setUser:user];
+            ABInAppEvent* event = [[ABInAppEvent alloc] init];
+            [event setCategory:ABCategory.signIn];
+            [event send];
+            
+        
+            [self moveToViewcontroller];
+        } else {
+            NSLog(@"signInResult is nil");
+        }
+        
+               
+    }];
 }
 
-- (void)login {
+- (IBAction)btnLogin:(id)sender {
     [self.fbloginmanager logInWithPermissions:@[@"email"] fromViewController:self handler:^(FBSDKLoginManagerLoginResult *result, NSError *err) {
         if (err == nil) {
-            NSLog(@"Đăng Nhập Thành Công");
+            NSLog(@"Đăng Nhập Thành Công Facebook");
+            [self moveToViewcontroller];
             
-            // Khởi tạo ViewController2 từ storyboard
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            ViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"LoginSuccess"];
-            
-            // Đẩy ViewController vào NavigationController
-            [self.navigationController pushViewController:vc animated:YES];
+            [[FBSDKAppEvents shared] logEvent:@"userSignedIn"];
 
         } else {
             NSLog(@"Đăng Nhập Thất Bại");
         }
     }];
+}
+
+- (void) moveToViewcontroller {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"LoginSuccess"];
+    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 @end

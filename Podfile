@@ -9,7 +9,9 @@ target 'Objective_C_TableView_Api_Json' do
  pod 'FBSDKCoreKit'
  pod 'FBSDKLoginKit'
  pod 'FBSDKShareKit'
-
+ pod 'AppsFlyerFramework'
+ pod 'GoogleSignIn'
+ pod 'AirBridge', '1.36.5'
   # Pods for Objective_C_TableView_Api_Json
 
 end

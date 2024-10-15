@@ -182,6 +182,7 @@
 				D57C97E52CAE5B41003D3A9C /* Frameworks */,
 				D57C97E62CAE5B41003D3A9C /* Resources */,
 				91BBE055D7AA43F4CA5D9FEF /* [CP] Embed Pods Frameworks */,
+				2561872F1D7ADA4C7D6F5A38 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -239,6 +240,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2561872F1D7ADA4C7D6F5A38 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Objective_C_TableView_Api_Json/Pods-Objective_C_TableView_Api_Json-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Objective_C_TableView_Api_Json/Pods-Objective_C_TableView_Api_Json-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Objective_C_TableView_Api_Json/Pods-Objective_C_TableView_Api_Json-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		91BBE055D7AA43F4CA5D9FEF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

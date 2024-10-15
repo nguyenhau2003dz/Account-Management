@@ -19,6 +19,17 @@
     <key>FacebookDisplayName</key>
     <string>Objective_C_TableView_Api_Json</string>
 
+    <key>GIDClientID</key>
+    <string>936175464181-egu1pcpcjuetp12moas0cn3b57le7kut.apps.googleusercontent.com</string>
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>com.googleusercontent.apps.936175464181-egu1pcpcjuetp12moas0cn3b57le7kut</string>
+        </array>
+      </dict>
+    </array>
     
     
 	<key>UIApplicationSceneManifest</key>

@@ -14,6 +14,20 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
+  - AirBridge (1.36.5)
+  - AppAuth (1.7.5):
+    - AppAuth/Core (= 1.7.5)
+    - AppAuth/ExternalUserAgent (= 1.7.5)
+  - AppAuth/Core (1.7.5)
+  - AppAuth/ExternalUserAgent (1.7.5):
+    - AppAuth/Core
+  - AppCheckCore (11.1.0):
+    - GoogleUtilities/Environment (~> 8.0)
+    - GoogleUtilities/UserDefaults (~> 8.0)
+    - PromisesObjC (~> 2.4)
+  - AppsFlyerFramework (6.15.3):
+    - AppsFlyerFramework/Main (= 6.15.3)
+  - AppsFlyerFramework/Main (6.15.3)
   - FBAEMKit (17.3.0):
     - FBSDKCoreKit_Basics (= 17.3.0)
   - FBSDKCoreKit (17.3.0):
@@ -24,30 +38,70 @@ PODS:
     - FBSDKCoreKit (= 17.3.0)
   - FBSDKShareKit (17.3.0):
     - FBSDKCoreKit (= 17.3.0)
+  - GoogleSignIn (8.0.0):
+    - AppAuth (< 2.0, >= 1.7.3)
+    - AppCheckCore (~> 11.0)
+    - GTMAppAuth (< 5.0, >= 4.1.1)
+    - GTMSessionFetcher/Core (~> 3.3)
+  - GoogleUtilities/Environment (8.0.2):
+    - GoogleUtilities/Privacy
+  - GoogleUtilities/Logger (8.0.2):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Privacy
+  - GoogleUtilities/Privacy (8.0.2)
+  - GoogleUtilities/UserDefaults (8.0.2):
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Privacy
+  - GTMAppAuth (4.1.1):
+    - AppAuth/Core (~> 1.7)
+    - GTMSessionFetcher/Core (< 4.0, >= 3.3)
+  - GTMSessionFetcher/Core (3.5.0)
+  - PromisesObjC (2.4.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 4.0)
+  - AirBridge (= 1.36.5)
+  - AppsFlyerFramework
   - FBSDKCoreKit
   - FBSDKLoginKit
   - FBSDKShareKit
+  - GoogleSignIn
 
 SPEC REPOS:
   trunk:
     - AFNetworking
+    - AirBridge
+    - AppAuth
+    - AppCheckCore
+    - AppsFlyerFramework
     - FBAEMKit
     - FBSDKCoreKit
     - FBSDKCoreKit_Basics
     - FBSDKLoginKit
     - FBSDKShareKit
+    - GoogleSignIn
+    - GoogleUtilities
+    - GTMAppAuth
+    - GTMSessionFetcher
+    - PromisesObjC
 
 SPEC CHECKSUMS:
   AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
+  AirBridge: 0a8f024b63b28545839c9e6433f833262bcda162
+  AppAuth: 501c04eda8a8d11f179dbe8637b7a91bb7e5d2fa
+  AppCheckCore: 85a8346f8b5d2f50ee1b9f55d8bcaaeafe904adb
+  AppsFlyerFramework: ad7ff0d22aa36c7f8cc4f71a5424e19b89ccb8ae
   FBAEMKit: 92f488a9c97208e2f6f01655750944d213fbc0b0
   FBSDKCoreKit: 1be47a742ccdddf8dd85272c3953534214dc0f30
   FBSDKCoreKit_Basics: fcafe75f7deeed1146d04ea51b45a69731e63c16
   FBSDKLoginKit: ad0d6485feace32d65f407f6a288c4dfa8ec559c
   FBSDKShareKit: e96f20fc2f6f68d25ae310a0f64f147f25ef66a4
+  GoogleSignIn: ce8c89bb9b37fb624b92e7514cc67335d1e277e4
+  GoogleUtilities: 26a3abef001b6533cf678d3eb38fd3f614b7872d
+  GTMAppAuth: f69bd07d68cd3b766125f7e072c45d7340dea0de
+  GTMSessionFetcher: 5aea5ba6bd522a239e236100971f10cb71b96ab6
+  PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
 
-PODFILE CHECKSUM: 699fd5bff824f5b609e336bc48adaffe13159945
+PODFILE CHECKSUM: 8c5b7ffad84f591e55673f707c02c9ed6979f900
 
 COCOAPODS: 1.15.2

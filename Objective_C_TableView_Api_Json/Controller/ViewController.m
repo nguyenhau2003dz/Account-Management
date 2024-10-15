@@ -11,6 +11,8 @@
 #import "AFNetworking.h"
 #import "WKWebViewController.h"
 #import "ExpandableImageView.h"
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @interface ViewController ()
 
@@ -161,6 +163,12 @@
             if (error) {
                 NSLog(@"Lỗi khi gửi dữ liệu %@", error.localizedDescription);
             } else {
+                
+                NSLog(@"Thêm thành công");
+                [[FBSDKAppEvents shared] logEvent:FBSDKAppEventNameAchievedLevel parameters:@{@"level": @"5",
+                                                    @"score": @"1500",
+                                                    @"time_spent": @"300"}];
+                
                 [self getDataFromAPIWithCompletion:^(NSArray<AccountModel *> *accounts, NSError *error) {
                     if (error) {
                         NSLog(@"Lỗi khi lấy dữ liệu về: %@", error.localizedDescription);
@@ -253,7 +261,7 @@
 //MARK: Block add, update, delete, get
 //Block post data lên api
 - (void)postDataToAPIWithUsername:(NSString *)username password:(NSString *)password imageLink:(NSString *)imageLink completion:(PostCompletionHandler)completion {
-    NSURL *URL = [NSURL URLWithString:@"https://042c-2001-ee0-4101-15f4-e8ac-6c41-66fb-b0e1.ngrok-free.app/api/post"];
+    NSURL *URL = [NSURL URLWithString:@"https://6c65-171-229-235-170.ngrok-free.app/api/post"];
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
@@ -282,7 +290,7 @@
 
 // Block update
 - (void)updateAccountWithID:(NSString *)accountID username:(NSString *)username password:(NSString *)password imageLink:(NSString *)imageLink completion:(PostCompletionHandler)completion {
-    NSString *urlString = [NSString stringWithFormat:@"https://042c-2001-ee0-4101-15f4-e8ac-6c41-66fb-b0e1.ngrok-free.app/api/edit/%@", accountID];
+    NSString *urlString = [NSString stringWithFormat:@"https://6c65-171-229-235-170.ngrok-free.app/api/edit/%@", accountID];
     NSURL *URL = [NSURL URLWithString:urlString];
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -311,7 +319,7 @@
 
 // Block xoá tài khoản
 - (void)deleteAccountWithID:(NSString *)accountID completion:(PostCompletionHandler)completion {
-    NSString *urlString = [NSString stringWithFormat:@"https://042c-2001-ee0-4101-15f4-e8ac-6c41-66fb-b0e1.ngrok-free.app/api/delete/%@", accountID];
+    NSString *urlString = [NSString stringWithFormat:@"https://6c65-171-229-235-170.ngrok-free.app/api/delete/%@", accountID];
     NSURL *URL = [NSURL URLWithString:urlString];
     NSLog(@"Lỗi khi xóa tài khoản: %@", urlString);
     
@@ -331,7 +339,7 @@
 
 //Block get data từ api
 - (void)getDataFromAPIWithCompletion:(CompletionHandler)completion {
-    NSURL *URL = [NSURL URLWithString:@"https://042c-2001-ee0-4101-15f4-e8ac-6c41-66fb-b0e1.ngrok-free.app/api/getList"];
+    NSURL *URL = [NSURL URLWithString:@"https://6c65-171-229-235-170.ngrok-free.app/api/getList"];
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     

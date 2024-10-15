@@ -11,6 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LoginController : UIViewController
 - (IBAction)btnLogin:(id)sender;
+- (IBAction)btnLogin2:(id)sender;
 
 @end
 

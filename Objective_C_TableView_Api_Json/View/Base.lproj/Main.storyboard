@@ -138,34 +138,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cx1-Mk-Rut">
-                                <rect key="frame" x="106" y="347" width="181" height="39"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Login with Facebook" cornerStyle="large">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" systemColor="tableCellBlueTextColor"/>
-                                    </backgroundConfiguration>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="btnLogin:" destination="eUc-be-BkI" eventType="touchUpInside" id="CK7-tZ-c6L"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="afa-3W-2ab">
+                                <rect key="frame" x="106" y="367" width="181" height="118"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cx1-Mk-Rut">
+                                        <rect key="frame" x="0.0" y="0.0" width="181" height="39"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="39" id="JVQ-N2-qdH"/>
+                                            <constraint firstAttribute="width" constant="181" id="SE4-bm-NX6"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Login with Facebook" cornerStyle="large">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" systemColor="tableCellBlueTextColor"/>
+                                            </backgroundConfiguration>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="btnLogin:" destination="eUc-be-BkI" eventType="touchUpInside" id="CK7-tZ-c6L"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kni-JF-Cgb">
+                                        <rect key="frame" x="0.0" y="79" width="181" height="39"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="181" id="KLA-ly-UaT"/>
+                                            <constraint firstAttribute="height" constant="39" id="TFx-1a-ab5"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Login with Google" cornerStyle="large">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" systemColor="tableCellBlueTextColor"/>
+                                            </backgroundConfiguration>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="btnLogin2:" destination="eUc-be-BkI" eventType="touchUpInside" id="ms5-6z-ZBt"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PeK-SQ-AhD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="PeK-SQ-AhD" firstAttribute="bottom" secondItem="Cx1-Mk-Rut" secondAttribute="bottom" constant="432" id="GtR-bd-KqC"/>
-                            <constraint firstItem="PeK-SQ-AhD" firstAttribute="trailing" secondItem="Cx1-Mk-Rut" secondAttribute="trailing" constant="106" id="bRy-Az-r1q"/>
-                            <constraint firstItem="Cx1-Mk-Rut" firstAttribute="top" secondItem="PeK-SQ-AhD" secondAttribute="top" constant="244" id="hyL-hy-fCR"/>
-                            <constraint firstItem="Cx1-Mk-Rut" firstAttribute="leading" secondItem="PeK-SQ-AhD" secondAttribute="leading" constant="106" id="o8T-N1-Jgu"/>
+                            <constraint firstItem="afa-3W-2ab" firstAttribute="centerX" secondItem="oCS-7G-SiG" secondAttribute="centerX" id="QkZ-Ia-hca"/>
+                            <constraint firstItem="afa-3W-2ab" firstAttribute="centerY" secondItem="oCS-7G-SiG" secondAttribute="centerY" id="Zn8-B3-u8Z"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Dzx-YX-7W4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0I2-Xo-HjX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="375" y="8"/>
+            <point key="canvasLocation" x="374.80916030534348" y="7.746478873239437"/>
         </scene>
     </scenes>
     <resources>
